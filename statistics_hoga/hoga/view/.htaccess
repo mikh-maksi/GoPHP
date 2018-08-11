@@ -1,0 +1,149 @@
+##
+# @package    Joomla
+# @copyright  Copyright (C) 2005 - 2016 Open Source Matters. All rights reserved.
+# @license    GNU General Public License version 2 or later; see LICENSE.txt
+##
+
+##
+# READ THIS COMPLETELY IF YOU CHOOSE TO USE THIS FILE!
+#
+# The line 'Options +FollowSymLinks' may cause problems with some server configurations.
+# It is required for the use of mod_rewrite, but it may have already been set by your
+# server administrator in a way that disallows changing it in this .htaccess file.
+# If using it causes your site to produce an error, comment it out (add # to the
+# beginning of the line), reload your site in your browser and test your sef urls. If
+# they work, then it has been set by your server administrator and you do not need to
+# set it here.
+##
+
+## No directory listings
+IndexIgnore *
+
+## Can be commented out if causes errors, see notes above.
+Options +SymLinksIfOwnerMatch
+Options -Indexes
+
+## Mod_rewrite in use.
+
+RewriteEngine On
+
+## Begin - Rewrite rules to block out some common exploits.
+# If you experience problems on your site then comment out the operations listed
+# below by adding a # to the beginning of the line.
+# This attempts to block the most common type of exploit `attempts` on Joomla!
+#
+# Block any script trying to base64_encode data within the URL.
+RewriteCond %{QUERY_STRING} base64_encode[^(]*\([^)]*\) [OR]
+# Block any script that includes a <script> tag in URL.
+RewriteCond %{QUERY_STRING} (<|%3C)([^s]*s)+cript.*(>|%3E) [NC,OR]
+# Block any script trying to set a PHP GLOBALS variable via URL.
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+# Block any script trying to modify a _REQUEST variable via URL.
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+# Return 403 Forbidden header and show the content of the root home page
+RewriteRule .* index.php [F]
+#
+## End - Rewrite rules to block out some common exploits.
+
+## Begin - Custom redirects
+#
+# If you need to redirect some pages, or set a canonical non-www to
+# www redirect (or vice versa), place that code here. Ensure those
+# redirects use the correct RewriteRule syntax and the [R=301,L] flags.
+#
+## End - Custom redirects
+
+##
+# Uncomment the following line if your webserver's URL
+# is not directly related to physical file paths.
+# Update Your Joomla! Directory (just / for root).
+##
+
+RewriteBase /
+RewriteRule ^s(\d+)[-/].*[-/]x(\d+)-.*$ index\.php?id=$1-$2&%{QUERY_STRING} [L]
+RewriteRule ^s(\d+)[-/]x(\d+)[-/].*$ index\.php?id=$1-$2&%{QUERY_STRING} [L]
+RewriteRule ^x(\d+)[-/].*[-/]s(\d+)[-/].*$ index\.php?id=$2-$1&%{QUERY_STRING} [L]
+RewriteRule ^x(\d+)[-/]s(\d+)[-/].*$ index\.php?id=$2-$1&%{QUERY_STRING} [L]
+RewriteRule ^.*[-/]x(\d+)[-/]s(\d+)[-/].*$ index\.php?id=$2-$1&%{QUERY_STRING} [L]
+RewriteRule ^.*[-/]x(\d+)[-/].*[-/]s(\d+)[-/].*$ index\.php?id=$2-$1&%{QUERY_STRING} [L]
+RewriteRule ^.*[-/]s(\d+)[-/].*[-/]x(\d+)[-/].*$ index\.php?id=$1-$2&%{QUERY_STRING} [L]
+RewriteRule ^.*[-/]s(\d+)[-/]x(\d+)[-/].*$ index\.php?id=$1-$2&%{QUERY_STRING} [L]
+
+
+## Begin - Joomla! core SEF Section.
+#
+RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+#
+# If the requested path and file is not /index.php and the request
+# has not already been internally rewritten to the index.php script
+RewriteCond %{REQUEST_URI} !^/index\.php
+# and the requested path and file doesn't directly match a physical file
+RewriteCond %{REQUEST_FILENAME} !-f
+# and the requested path and file doesn't directly match a physical folder
+RewriteCond %{REQUEST_FILENAME} !-d
+# internally rewrite the request to the index.php script
+RewriteRule .* index.php [L]
+#
+## End - Joomla! core SEF Section.
+
+RewriteCond %{THE_REQUEST} !^POST
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
+RewriteCond %{SERVER_PORT}>s ^(443>(s)|[0-9]+>s)$
+RewriteRule ^index\.php$ http%2://kaskad-s.com/ [R=301,L]
+			  
+  
+			  
+Redirect 301 /trevozhnaya-knopka.html http://www.kaskad-s.com/trevozhnaya-knopka
+Redirect 301 /kachestvo-uslug-okhrany.html http://www.kaskad-s.com/materials/187-kachestvo-uslug-oxrany.html
+
+
+Redirect 301 /fizicheskaya-oxrana/oxrana-selskoxozyajstvennyx-ugodij-i-soxrannosti-urozhaya.html http://www.kaskad-s.com/solutions/oxrana-polej.html
+Redirect 301 /tariffs/stoimost-uslug.html http://www.kaskad-s.com/tariffs.html
+Redirect 301 /materials/67/kachestvo-uslug-oxrany.html http://www.kaskad-s.com/materials/analitycs/kachestvo-uslug-oxrany.html
+Redirect 301 /materials/vse-o-texnicheskix-sredstvax-oxrany/ustanavlivaem-vsyo-samostoyatelno-dazhe-videonablyudenie.html http://www.kaskad-s.com/materials/analitycs/ustanavlivaem-vsyo-samostoyatelno-dazhe-videonablyudenie.html
+Redirect 301 /materials/69/zashhita-kvartiry-effektivnye-sposoby-zashhity-kvartiry-ot-vorov.html http://www.kaskad-s.com/materials/analitycs/zashhita-kvartiry-effektivnye-sposoby-zashhity-kvartiry-ot-vorov.html
+Redirect 301 /materials/69/oxrana-kvartiry-oxrana-kvartiry-ili-kak-sberech-svoe-imushhestvo.html http://www.kaskad-s.com/materials/analitycs/oxrana-kvartiry-oxrana-kvartiry-ili-kak-sberech-svoe-imushhestvo.html
+Redirect 301 /materials/69/bezopasnost-kvartiry-ostorozhno-kvartirnye-vory.html http://www.kaskad-s.com/materials/analitycs/bezopasnost-kvartiry-ostorozhno-kvartirnye-vory.html
+Redirect 301 /materials/69/opastnost-v-podezde.html http://www.kaskad-s.com/materials/analitycs/opastnost-v-podezde.html
+Redirect 301 /materials/67/vorovstvo-na-rabote-chast-1-borotsya-ili-predotvrashhat.html http://www.kaskad-s.com/materials/analitycs/vorovstvo-na-rabote-chast-1-borotsya-ili-predotvrashhat.html
+Redirect 301 /materials/67/vorovstvo-na-rabote-chast-3-chto-delat.html http://www.kaskad-s.com/materials/analitycs/vorovstvo-na-rabote-chast-3-chto-delat.html
+Redirect 301 /materials/67/deshevaya-oxrana-ugroza-dlya-vashego-biznesa.html http://www.kaskad-s.com/materials/analitycs/deshevaya-oxrana-ugroza-dlya-vashego-biznesa.html
+Redirect 301 /materials/67/vorovstvo-na-rabote-chast-2-a-s-chem-sobstvenno-borotsya.html http://www.kaskad-s.com/materials/analitycs/vorovstvo-na-rabote-chast-2-a-s-chem-sobstvenno-borotsya.html
+Redirect 301 /materials/67/vynesli-czennosti-poka-xozyaeva-mirno-spali.html http://www.kaskad-s.com/materials/analitycs/vynesli-czennosti-poka-xozyaeva-mirno-spali.html
+Redirect 301 /materials/69/chto-delat-pri-utere-platezhnoj-karty.html http://www.kaskad-s.com/materials/analitycs/chto-delat-pri-utere-platezhnoj-karty.html
+Redirect 301 /materials/67/znakomimsya-detektor-lzhi-poligraf.html http://www.kaskad-s.com/materials/analitycs/znakomimsya-detektor-lzhi-poligraf.html
+Redirect 301 /materials/67/vasha-bezopasnost-zadacha-dlya-professionalov.html http://www.kaskad-s.com/materials/analitycs/vasha-bezopasnost-zadacha-dlya-professionalov.html
+Redirect 301 /materials/69/nadezhnost-polucheniya-deneg-cherez-bankomat-karta-zablokirovana-chto-delat.html http://www.kaskad-s.com/materials/analitycs/nadezhnost-polucheniya-deneg-cherez-bankomat-karta-zablokirovana-chto-delat.html
+Redirect 301 /materials/69/kak-pravilno-zashhitit-zhilishhe.html http://www.kaskad-s.com/materials/analitycs/kak-pravilno-zashhitit-zhilishhe.html
+Redirect 301 /materials/67/kak-pravilno-zashhitit-zhilishhe.html http://www.kaskad-s.com/materials/analitycs/kak-pravilno-zashhitit-zhilishhe.html
+Redirect 301 /materials/67/krazha-v-magazine-protivodejstvie.html http://www.kaskad-s.com/materials/analitycs/krazha-v-magazine-protivodejstvie.html
+Redirect 301 /materials/67/zashhita-tovara-ili-kak-zashhitit-tovar-ot-nechestnyx-pokupatelej.html http://www.kaskad-s.com/materials/analitycs/zashhita-tovara-ili-kak-zashhitit-tovar-ot-nechestnyx-pokupatelej.html
+Redirect 301 /materials/67/kak-vybrat-firmu.html http://www.kaskad-s.com/materials/analitycs/kak-vybrat-firmu.html
+Redirect 301 /materials/67/xishhenie-gruzov-na-atomobilnom-transporte-interesnye-fakty.html http://www.kaskad-s.com/materials/analitycs/xishhenie-gruzov-na-atomobilnom-transporte-interesnye-fakty.html
+Redirect 301 /materials/76/trevozhnaya-signalizacziya.html http://www.kaskad-s.com/materials/analitycs/trevozhnaya-signalizacziya.html
+Redirect 301 /materials/67/trevozhnaya-signalizacziya.html http://www.kaskad-s.com/materials/analitycs/trevozhnaya-signalizacziya.html
+Redirect 301 /materials/76/oxrannye-sistemy-videonablyudeniya.html http://www.kaskad-s.com/materials/76/oxrannye-sistemy-videonablyudeniya.html
+Redirect 301 /materials/67/oxrannye-sistemy-videonablyudeniya.html http://www.kaskad-s.com/materials/67/oxrannye-sistemy-videonablyudeniya.html
+Redirect 301 /materials/67/krazhi-gruzov-na-zheleznodorozhnom-transporte-statistika-fakty.html http://www.kaskad-s.com/materials/analitycs/krazhi-gruzov-na-zheleznodorozhnom-transporte-statistika-fakty.html
+Redirect 301 /materials/67/vy-uvereny-v-svoej-bezopasnosti.html http://www.kaskad-s.com/materials/analitycs/vy-uvereny-v-svoej-bezopasnosti.html
+Redirect 301 /materials/67/krupnye-kompanii-oxrannogo-biznesa-protiv-melkix-firm.html http://www.kaskad-s.com/materials/analitycs/krupnye-kompanii-oxrannogo-biznesa-protiv-melkix-firm.html
+Redirect 301 /materials/76/navigator-signalizacziya-i-pistolet-v-damskoj-sumochke.html http://www.kaskad-s.com/materials/analitycs/navigator-signalizacziya-i-pistolet-v-damskoj-sumochke.html
+Redirect 301 /materials/76/kontroliruyushhie-videosistemy-i-sistemy-trevozhnoj-signalizaczii-oznakomitelnyj-obzor-plyusy-i-minusy.html http://www.kaskad-s.com/materials/analitycs/kontroliruyushhie-videosistemy-i-sistemy-trevozhnoj-signalizaczii-oznakomitelnyj-obzor-plyusy-i-minusy.html
+Redirect 301 /materials/67/kontroliruyushhie-videosistemy-i-sistemy-trevozhnoj-signalizaczii-oznakomitelnyj-obzor-plyusy-i-minusy.html http://www.kaskad-s.com/materials/analitycs/kontroliruyushhie-videosistemy-i-sistemy-trevozhnoj-signalizaczii-oznakomitelnyj-obzor-plyusy-i-minusy.html
+Redirect 301 /materials/67/v-ukraine-otmenili-texosmotr.html http://www.kaskad-s.com/materials/analitycs/v-ukraine-otmenili-texosmotr.html
+Redirect 301 /materials/69/poetomu-my-postavili-kvartiru-pod-oxranu-ochen-pouchitelnaya-istoriya.html http://www.kaskad-s.com/materials/analitycs/poetomu-my-postavili-kvartiru-pod-oxranu-ochen-pouchitelnaya-istoriya.html
+Redirect 301 /materials/67/kachestvennaya-li-oxrana-na-avtostoyanke.html http://www.kaskad-s.com/materials/analitycs/kachestvennaya-li-oxrana-na-avtostoyanke.html
+Redirect 301 /materials/69/massovye-meropriyatiya-kak-vyzhit.html http://www.kaskad-s.com/materials/analitycs/massovye-meropriyatiya-kak-vyzhit.html
+Redirect 301 /materials/69/kak-vesti-sebya-vo-vremya-grozy.html http://www.kaskad-s.com/materials/analitycs/kak-vesti-sebya-vo-vremya-grozy.html
+Redirect 301 /materials/69/chto-delat-esli-ukrali-mobilnyj-telefon.html http://www.kaskad-s.com/materials/analitycs/chto-delat-esli-ukrali-mobilnyj-telefon.html
+Redirect 301 /materials/67/oxrana-i-bezopasnost-vo-vremya-provedeniya-massovyx-meropriyatij.html http://www.kaskad-s.com/materials/analitycs/oxrana-i-bezopasnost-vo-vremya-provedeniya-massovyx-meropriyatij.html
+Redirect 301 /materials/69/vyexali-na-piknik-i-vas-ugorazdilo-vstretitsya-so-zmeej-ne-beda.html http://www.kaskad-s.com/materials/analitycs/vyexali-na-piknik-i-vas-ugorazdilo-vstretitsya-so-zmeej-ne-beda.html
+Redirect 301 /materials/69/ostorozhno-karmannik.html http://www.kaskad-s.com/materials/analitycs/ostorozhno-karmannik.html
+Redirect 301 /materials/69/sobaki-v-gorode.html http://www.kaskad-s.com/materials/analitycs/sobaki-v-gorode.html
+Redirect 301 /materials/69/etimologiya-slova-oxrana.html http://www.kaskad-s.com/materials/analitycs/etimologiya-slova-oxrana.html
+Redirect 301 /materials/76/o-sistemax-videonablyudeniya.html http://www.kaskad-s.com/materials/analitycs/o-sistemax-videonablyudeniya.html
+Redirect 301 /materials/67/kontrolno-propusknoj-rezhimorganizacziya-propusknogo-rezhima-na-predpriyatii.html http://www.kaskad-s.com/materials/analitycs/kontrolno-propusknoj-rezhimorganizacziya-propusknogo-rezhima-na-predpriyatii.html
+Redirect 301 /materials/67/kontrolno-propusknoj-punkt-i-ego-oborudovanie.html http://www.kaskad-s.com/materials/analitycs/kontrolno-propusknoj-punkt-i-ego-oborudovanie.html
+Redirect 301 /materials/67/kak-effektivno-kontrolirovat-rabotu-sotrudnikov-sluzhby-oxrany.html http://www.kaskad-s.com/materials/analitycs/kak-effektivno-kontrolirovat-rabotu-sotrudnikov-sluzhby-oxrany.html
+Redirect 301 /materials/analitycs.html http://www.kaskad-s.com/materials.html
+Redirect 301 /materials/ohrana-objektov.html http://www.kaskad-s.com/solutions/oxrana-kvartir/pultovaya-oxrana-kvartir.html
