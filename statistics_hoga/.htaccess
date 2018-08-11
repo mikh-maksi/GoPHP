@@ -1,0 +1,4 @@
+AuthName "Authentication" 
+AuthType Basic
+AuthUserFile /home/innova14/innovations.kh.ua/www/statistics_hoga/upload/.htpasswd
+require valid-user
