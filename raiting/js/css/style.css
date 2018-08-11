@@ -1,0 +1,29 @@
+*{
+    padding: 0;
+    margin:0;
+}
+.wrapper{
+    width:1200px;
+    margin: 0 auto;
+}
+.d{
+    display: inline-block;
+}
+.d1{
+    width:200px;
+    background: lightblue;
+    height: 50vh;
+}
+.d2{
+    width:800px;
+    background: lightgreen;
+    height: 50vh;
+    margin-left:-4px;
+
+}
+.d3{
+    width:200px;
+    background: lightpink;
+    height: 50vh;
+    margin-left:-4px;
+}
