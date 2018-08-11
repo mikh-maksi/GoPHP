@@ -1,0 +1,23 @@
+.wrapper{
+    width:1000px;
+    margin:0 auto;
+    text-align: center;
+}
+.inp{
+    width: 95%;
+}
+.val{
+    width:5%;
+    margin-left: -8px;
+}
+.forbtn{
+    width:1000px;
+    margin:0 auto;
+    text-align: right;
+}
+.swot{
+    background: #DDD;
+}
+.mission{
+    
+}

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js" integrity="sha384-u/bQvRA/1bobcXlcEYpsEdFVK/vJs3+T+nXLsBYJthmdBuavHvAW6UsmqO2Gd/F9" crossorigin="anonymous"></script>
+    
+
+</head>
+<body>
+    <div class="wrapper">
+        <h1>Проект</h1>
+        <div class="swot">
+            <h2>S.W.O.T</h2>
+            <div class="strengths">
+                <h3>Сильные стороны</h3>
+                <div>
+                    <input type="text" name = "inp1" class = "inp">
+                    <input type="number" step = "1" name = "val1" class = "val" min="1" max="5">
+                </div>
+                <div class="forbtn">
+                    <button type="button" class="btn btn-success">+</button>
+                </div>
+            </div>
+            <div class="weaknesses">
+                <h3>Слабые стороны</h3>
+                <div>
+                    <input type="text" name = "inp1" class = "inp">
+                    <input type="number" step = "1" name = "val1" class = "val" min="1" max="5">
+                </div>
+                <div class="forbtn">
+                    <button type="button" class="btn btn-success">+</button>
+                </div>
+            </div>
+           
+            <div class="opportunities">
+                <h3>Возможности</h3>
+                <div>
+                    <input type="text" name = "inp1" class = "inp">
+                    <input type="number" step = "1" name = "val1" class = "val" min="1" max="5">
+                </div>
+                <div class="forbtn">
+                    <button type="button" class="btn btn-success">+</button>
+                </div>
+            </div>
+            <div class="threats">
+                    <h3>Угрозы</h3>
+                    <div>
+                        <input type="text" name = "inp1" class = "inp">
+                        <input type="number" step = "1" name = "val1" class = "val" min="1" max="5">
+                    </div>
+                    <div class="forbtn">
+                        <button type="button" class="btn btn-success">+</button>
+                    </div>
+                </div>                
+        </div>
+        <div class="swotwork">
+                <h2>S.W.O.T.+</h2>
+                <div class="directions">
+                <h3>Направления деятельности</h3>
+                    <div class="input-group">
+                        <select class="custom-select" id="inputGroupSelect04">
+                          <option selected>Сильные стороны</option>
+                          <option value="1">Сильная сторона 1</option>
+                          <option value="2">Сильная сторона 2</option>
+                          <option value="3">Сильная сторона 3</option>
+                        </select>
+                        <div class="input-group-append">
+                          <button class="btn btn-outline-secondary" type="button">Еще</button>
+                        </div>
+                    </div> 
+                    <div class="input-group">
+                            <select class="custom-select" id="inputGroupSelect04">
+                              <option selected>Возможности</option>
+                              <option value="1">Возможность 1</option>
+                              <option value="2">Возможность 2</option>
+                              <option value="3">Возможность 3</option>
+                            </select>
+                            <div class="input-group-append">
+                              <button class="btn btn-outline-secondary" type="button">Еще</button>
+                            </div>
+                            
+                        </div> 
+                        <textarea name="direction1" id="direction2" cols="140" rows="4" width = "1000px"></textarea>
+                        <div class="forbtn">
+                                <button type="button" class="btn btn-success">+</button>
+                            </div>
+
+                </div>
+                <div class="criticalquestions">
+                        <h3>Критические вопросы</h3>
+                            <div class="input-group">
+                                <select class="custom-select" id="inputGroupSelect04">
+                                  <option selected>Слабые стороны</option>
+                                  <option value="1">Слабая сторона 1</option>
+                                  <option value="2">Слабая сторона 2</option>
+                                  <option value="3">Слабая сторона 3</option>
+                                </select>
+                                <div class="input-group-append">
+                                  <button class="btn btn-outline-secondary" type="button">Еще</button>
+                                </div>
+                            </div> 
+                            <div class="input-group">
+                                    <select class="custom-select" id="inputGroupSelect04">
+                                      <option selected>Угрозы</option>
+                                      <option value="1">Угроза 1</option>
+                                      <option value="2">Угроза 2</option>
+                                      <option value="3">Угроза 3</option>
+                                    </select>
+                                    <div class="input-group-append">
+                                      <button class="btn btn-outline-secondary" type="button">Еще</button>
+                                    </div>
+                                    
+                                </div> 
+                                <textarea name="direction1" id="direction2" cols="140" rows="4" width = "1000px"></textarea>
+                                <div class="forbtn">
+                                        <button type="button" class="btn btn-success">+</button>
+                                    </div>
+        
+                        </div>
+                        <div class="questions">
+                                <h3>Реакция на слабые стороны</h3>
+                                    <div class="input-group">
+                                        <select class="custom-select" id="inputGroupSelect04">
+                                          <option selected>Слабые стороны</option>
+                                          <option value="1">Слабая сторона 1</option>
+                                          <option value="2">Слабая сторона 2</option>
+                                          <option value="3">Слабая сторона 3</option>
+                                        </select>
+                                        <div class="input-group-append">
+                                          <button class="btn btn-outline-secondary" type="button">Еще</button>
+                                        </div>
+                                    </div> 
+
+                                        <textarea name="direction1" id="direction2" cols="140" rows="4" width = "1000px"></textarea>
+                                        <div class="forbtn">
+                                                <button type="button" class="btn btn-success">+</button>
+                                            </div>
+                
+                                </div>
+        
+
+                    </div>
+        <div class="mission">
+            <h2>Миссия</h2>            
+            <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Миссия</span>
+                    </div>
+                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                  </div>        </div>
+        <div class="mission">
+            <h2>Визия</h2>            
+            <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Визия</span>
+                    </div>
+                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                  </div>        </div>
+    
+    <div class="goals">
+            <h3>Цели по S.M.A.R.T.</h3>
+            <div class="input-group mb-3">
+                    <select class="custom-select" id="inputGroupSelect02">
+                      <option selected>Выберите направление</option>
+                      <option value="1">Направление 1</option>
+                      <option value="2">Направление 2</option>
+                      <option value="3">Направление 3</option>
+                    </select>
+                    <div class="input-group-append">
+                      <label class="input-group-text" for="inputGroupSelect02">Сохранить</label>
+                    </div>
+                  </div>
+                  <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1">Конкретная</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Работающий аналог и отиличия от него" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                
+                <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1">Измеримая</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Числовые показатели" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="basic-addon1">Достижимая</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Алгоритм получения результата" aria-label="Username" aria-describedby="basic-addon1">
+                          </div>
+                          <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon1">Актуальная</span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Лучше чем 2-3 аналогичные цели (указать какие)" aria-label="Username" aria-describedby="basic-addon1">
+                              </div>
+                              <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text" id="basic-addon1">Ограничення по времени</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Когда должна быть реализована" aria-label="Username" aria-describedby="basic-addon1">
+                                  </div>
+                                  <div class="forbtn">
+                                        <button type="button" class="btn btn-success">+</button>
+                                    </div>
+                    </div>
+        <div class="strategyplans">
+            <h3>Стратегическое планирование</h3>
+            <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="">Название этапа и описание</span>
+                    </div>
+                    <input type="text" class="form-control" value = "Планирование">
+                    <input type="text" class="form-control">
+                  </div>
+                  <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="">Название этапа и описание</span>
+                        </div>
+                        <input type="text" class="form-control" value = "Первые результаты">
+                        <input type="text" class="form-control">
+                      </div>
+                      <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="">Название этапа и описание</span>
+                            </div>
+                            <input type="text" class="form-control" value = "Нулевая рентабельность">
+                            <input type="text" class="form-control">
+                          </div>
+                          <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="">Название этапа и описание</span>
+                                </div>
+                                <input type="text" class="form-control" value = "Целевые показатели">
+                                <input type="text" class="form-control">
+                              </div>
+                              <div class="forbtn">
+                                    <button type="button" class="btn btn-success">+</button>
+                                </div>
+        </div>
+        <div class="processes">
+            <h3>Производство</h3>
+                <p>BPMN-схема процесса</p>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="customFile">
+                    <label class="custom-file-label" for="customFile">Выберите файл</label>
+                  </div>
+                  <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">Описание</span>
+                        </div>
+                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                      </div>
+            <h3>Маркетинг</h3>
+            <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Требуемое решение</span>
+                    </div>
+                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                  </div>
+                  <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1">Внимание</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Инструмент привлечения внимания" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                
+                <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="basic-addon1">Интерес</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Инструменты формирования интереса" aria-label="Username" aria-describedby="basic-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="basic-addon1">Желание</span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Инструменты формирования желания" aria-label="Username" aria-describedby="basic-addon1">
+                          </div>
+                          <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon1">Действие</span>
+                                </div>
+                                <input type="text" class="form-control" placeholder="Обеспечение действий" aria-label="Username" aria-describedby="basic-addon1">
+                              </div>
+                              <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text" id="basic-addon1">Удовлетворенность</span>
+                                    </div>
+                                    <input type="text" class="form-control" placeholder="Инструменты поддержания удовлетворенности" aria-label="Username" aria-describedby="basic-addon1">
+                                  </div>
+                                  <div class="forbtn">
+                                        <button type="button" class="btn btn-success">+</button>
+                                    </div>
+                    
+
+
+            <h3>Обеспечение</h3>
+            <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Ообеспечивающие процессы</span>
+                    </div>
+                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                  </div>
+        </div>
+        <div class="resources">
+            <h3>Технологии</h3>
+            <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">Описание технологий</span>
+                    </div>
+                    <textarea class="form-control" aria-label="With textarea"></textarea>
+                  </div>
+            <h3>Кадры</h3>
+            <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="">Название этапа и описание</span>
+                    </div>
+                    <input type="text" class="form-control" value = "Планирование">
+                    <input type="text" class="form-control">
+                  </div>
+                  <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="">Название этапа и описание</span>
+                        </div>
+                        <input type="text" class="form-control" value = "Первые результаты">
+                        <input type="text" class="form-control">
+                      </div>
+                      <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="">Название этапа и описание</span>
+                            </div>
+                            <input type="text" class="form-control" value = "Нулевая рентабельность">
+                            <input type="text" class="form-control">
+                          </div>
+                          <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="">Название этапа и описание</span>
+                                </div>
+                                <input type="text" class="form-control" value = "Целевые показатели">
+                                <input type="text" class="form-control">
+                              </div>
+                              <div class="forbtn">
+                                    <button type="button" class="btn btn-success">+</button>
+                                </div>
+            <h3>Финансы</h3>
+            <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="">Статья расходов и описание</span>
+                    </div>
+                    <input type="text" class="form-control" value = "Планирование">
+                    <input type="text" class="form-control">
+                  </div>
+                  <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text" id="">Статья расходов и описание</span>
+                        </div>
+                        <input type="text" class="form-control" value = "Менеджмент">
+                        <input type="text" class="form-control">
+                      </div>
+                      <div class="input-group">
+                            <div class="input-group-prepend">
+                              <span class="input-group-text" id="">Статья расходов и описание</span>
+                            </div>
+                            <input type="text" class="form-control" value = "Проектирование">
+                            <input type="text" class="form-control">
+                          </div>
+                          <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="">Статья расходов и описание</span>
+                                </div>
+                                <input type="text" class="form-control" value = "Маркетинг">
+                                <input type="text" class="form-control">
+                              </div>
+                              <div class="forbtn">
+                                    <button type="button" class="btn btn-success">+</button>
+                                </div>
+                                <div class="input-group">
+                                        <div class="input-group-prepend">
+                                          <span class="input-group-text" id="">Статья доходов и описание</span>
+                                        </div>
+                                        <input type="text" class="form-control" value = "Основной продукт">
+                                        <input type="text" class="form-control">
+                                      </div>
+                                      <div class="forbtn">
+                                            <button type="button" class="btn btn-success">+</button>
+                                        </div>
+        </div>
+        <div class="needmanagment">
+            <h3>Матрица рисков</h3>
+            <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text" id="">Действие/интенсивность/результат</span>
+                    </div>
+                    <input type="text" class="form-control">
+                    <input type="text" class="form-control">
+                    <input type="text" class="form-control">        
+                  </div>
+                  <div class="forbtn">
+                        <button type="button" class="btn btn-success">+</button>
+                    </div>
+            <h3>Схема управления</h3>
+            <select class="form-control">
+                    <option>Процесс (канбан)</option>
+                    <option>Проект (CPM)</option>
+                    <option>Неопределенность (SCRUM)</option>
+                  </select>
+        </div>
+                    
+                </div>
+  
+            </div>
+</body>
+</html>
