@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://code.jquery.com/jquery-3.1.1.js" ></script>
+</head>
+<body>
+	<div id="example_j">
+		Card №:<input  value="123" id = "card" /><br>
+		Amount:<input  value="" id = "amount"/><br>
+		Details:<input  value="" id = "details"/><br>
+		<button>Отправить</button> <span>Заполните поля и отправьте их на сервер</span>
+		<p id = "out"></p>
+	</div>
+<script>
+	var a,b,id,state, message, ref, amt, cardinfo, ccy, code, comis,card,amt,det;
+	console.log( $("#card").val());
+
+	$("#example_j button").click(function(){
+	$.getJSON("http://new-level.kh.ua/pb/pay.php?card=4149497854367234&amt=5&det=details",
+	function(data){
+	          console.log(data);
+				a = data.data.payment;
+				console.log(a['@attributes']);
+				b = a['@attributes'];
+				id = b['id'];
+				state = b['state'];
+				message = b['message'];
+				ref = b['ref'];
+				amt = b['amt'];
+				cardinfo = b['cardinfo'];
+				ccy = b['ccy'];
+				code = b['code'];
+				comis = b['comis'];
+							
+			  $("#out").html("id "+id+"<br> "+"state "+state+"<br> "+"message "+message+"<br> "+"ref "+ref+"<br> "+"amt "+amt+"<br> "
+			  +"cardinfo "+cardinfo+"<br> "+"ccy "+ccy+"<br> "+"code "+code+"<br> "+"comis "+comis+" ");
+	        });
+	        });
+
+</script>
+</body>
+</html>
