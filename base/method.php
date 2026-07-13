@@ -1,5 +1,8 @@
 <?php
-$a = $_GET["a"];
+print_r ($_GET);
+
+
+$a = $_GET["val"];
 $b = $_GET["b"];
 
 
