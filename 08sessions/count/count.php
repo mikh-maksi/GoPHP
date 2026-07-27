@@ -8,4 +8,4 @@
     }
     echo $_SESSION['count'];
 ?>
-<br><a href="newcount.php">Обнулить счет</a>
+<br><a href="newcount.php">Обнулити рахунок</a>

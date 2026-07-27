@@ -20,9 +20,6 @@ function searchin_property_posttype() {
 
 add_action('init', 'searchin_property_posttype');
 
-
-
-
 //Action hook to register metaboxes for specific post type property
 add_action('add_meta_boxes_property', 'searchin_property_metaboxes');
 
